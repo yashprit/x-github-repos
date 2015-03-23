@@ -1,84 +1,66 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="x-github-repos : polymer element to render all public repos">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>&lt;x-github-repos&gt;</title>
+    <link rel="stylesheet" href="stylesheets/normalised.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>x-github-repos</title>
+    <!-- Importing Web Component's Polyfill -->
+    <script src="https://github.com/yashprit/x-github-repos/blob/master/bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="https://github.com/yashprit/x-github-repos/blob/master/src/x-github-repos.html">
   </head>
-
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/yashprit/x-github-repos">View on GitHub</a>
+    <header>
+      <h1>&lt;x-github-repos&gt;</h1>
+      <h2>A web component to show repositories of User</h2>
+    </header>
 
-          <h1 id="project_title">x-github-repos</h1>
-          <h2 id="project_tagline">polymer element to render all public repos</h2>
+    <form id="create-card">
+      <input id="username" type="text" placeholder="Enter a Github username">
+      <button>Show</button>
+    </form>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/yashprit/x-github-repos/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/yashprit/x-github-repos/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+    <output id="cards"></output>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="x-github-repo" class="anchor" href="#x-github-repo" aria-hidden="true"><span class="octicon octicon-link"></span></a>x-github-repo</h1>
+    <footer>
+      <iframe id="twitter" allowtransparency="true" frameborder="0" width="100" height="22" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?text=<github-card>%3A%20A%20Web%20Component%20to%20show%20a%20profile-card%20for%20your%20Github%20account.&amp;url=http%3A%2F%2Fpazguille.github.io%2Fgithub-card"></iframe>
 
-<blockquote>
-<p>polymer web-component for github repo</p>
-</blockquote>
+      <a href="https://github.com/yashprit/x-github-repos" id="github-ribbon"><img width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
-<h2>
-<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+      by <a href="yashprit.github.io">Yashprit Singh</a> with <a href="http://yashprit.com/" class="heart">❤</a>
 
-<div class="highlight highlight-sh"><pre>$ bower install --save x-github-repos</pre></div>
+      <iframe id="github-button" src="http://ghbtns.com/github-btn.html?user=yashprit&amp;repo=x-github-repos&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="152" height="30"></iframe>
+    </footer>
 
-<h2>
-<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<div class="highlight highlight-html"><pre><span class="pl-c">&lt;!--include inside header--&gt;</span>
-&lt;<span class="pl-ent">link</span> <span class="pl-e">rel</span>=<span class="pl-s"><span class="pl-pds">"</span>import<span class="pl-pds">"</span></span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>src/x-github-repos.html<span class="pl-pds">"</span></span>&gt;
-
-<span class="pl-c">&lt;!--call element--&gt;</span>
-&lt;<span class="pl-ent">x</span><span class="pl-e">-github-repos</span> <span class="pl-e">tag</span>=<span class="pl-s"><span class="pl-pds">"</span>user<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">x</span><span class="pl-e">-github-repos</span>&gt;
-</pre></div>
-
-<h2>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
-
-<p><a href="">Follow url for demo</a></p>
-
-<h2>
-<a id="contribute-or-report-issue" class="anchor" href="#contribute-or-report-issue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribute or Report Issue</h2>
-
-<p>For bugs and feature requests, [please create an issue][issue-url].</p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>MIT © <a href="yashprit.github.io">Yashprit</a></p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">x-github-repos maintained by <a href="https://github.com/yashprit">yashprit</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+    <script>
+      window.onload = function() {
+        var inp = document.querySelector('#username'),
+            frm = document.querySelector('#create-card'),
+            output = document.querySelector('#cards');
+        var createCard = function(user) {
+          var github;
+          if (user === '') { return false; }
+          github = document.createElement('github-card');
+          github.setAttribute('user', user);
+          output.innerHTML = '';
+          output.appendChild(github);
+          window.history.pushState('object or string', 'Title', location.pathname + '?user=' + user);
+        };
+        var user = new RegExp('[?&]'+encodeURIComponent('user')+'=([^&]*)').exec(location.search);
+        if (user) { createCard(user[1]) };
+        frm.addEventListener('submit', function(eve) {
+          var user = inp.value;
+          eve.preventDefault();
+          createCard(user);
+        }, true);
+      };
+    </script>
   </body>
 </html>
