@@ -1,0 +1,19 @@
+{
+  "name": "x-github-repos",
+  "version": "0.0.0",
+  "authors": [
+    "Yashprit Singh <yashprits@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "polymer-jsonp": "Polymer/polymer-jsonp#~0.3.0"
+  }
+}
