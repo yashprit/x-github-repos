@@ -1,0 +1,189 @@
+<!--
+/**
+ * @module x-github-repo
+ */
+/** Element to access all reositories
+ *
+ * Polymer webcomponent for x-github-repos,
+ * fetch all repo for user an displays them as a result
+ *
+ * Example :-
+ *  <x-github-repos user="yashprit"></x-github-repos>
+ *
+ *
+ * @class x-github-repos
+ * @blurb Element to access github repos
+ * @author Yashprit Singh
+ * @categories data
+ */
+/**
+ *
+ * Fired after results are loaded
+ *
+ * @event x-github-repos-load
+ *
+ */
+-->
+
+<style>
+  @font-face {
+    font-family: 'FontAwesome';
+    src: url('../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?v=4.0.3');
+    src: url('../bower_components/components-font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'), url('../bower_components/components-font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3') format('woff'), url('../bower_components/components-font-awesome/fonts/fontawesome-webfont.ttf?v=4.0.3') format('truetype'), url('../bower_components/components-font-awesome/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+<link rel="import" href="../bower_components/polymer-jsonp/polymer-jsonp.html">
+
+<polymer-element name="x-github-repos" attributes="user repoPerPage page">
+  <<template>
+    <link href="../bower_components/components-font-awesome/css/font-awesome.css" rel="stylesheet">
+    <style>
+      :host{
+        *{
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .xGithubRepo{
+        width:960px;
+        margin:0 auto;
+        font-family: 'Droid Sans', sans-serif;;
+        overflow: hidden;
+      }
+      .panel {
+        border-radius: 2px;
+        border: 0;
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+        width:300px;
+        min-height:200px;
+        float:left;
+        margin:10px;
+      }
+      .panel > .panel-heading {
+        background-color: #03a9f4;
+        padding:5px 0px 30px 0px;
+        text-align:center;
+        color:white;
+        z-index:500;
+        position:relative;
+      }
+      .panel > .panel-body{
+        padding-bottom:10px;
+        overflow:hidden;
+        z-index:600;
+        position:relative;
+        margin-top:-34px;
+      }
+      .stats{
+        width:60px;
+        float:left;
+        margin-left: 30px;
+        text-align:center;
+        border: 2px solid #03a9f4;
+        border-radius: 50%;;
+        height:60px;
+        padding: 5px;
+        background-color:white;
+        text-align:center;
+        color:#03a9f4;
+      }
+      .stats:first-child{
+        margin-left:10px
+      }
+      .stats:last-child {
+        float:right;
+        margin-right:8px;
+      }
+      .icon{
+        margin-bottom:10px;
+        display: block;
+      }
+      .counts{
+        padding:5px;
+        margin-top:10px;
+      }
+    </style>
+    <polymer-jsonp id="ajax" auto url="https://api.github.com/users/{{user}}/repos?&per_page={{repoPerPage}}&page={{page}}&callback="></polymer-jsonp>
+
+    <div class="xGithubRepo">
+      <template id="repos" repeat="{{repo in repos}}">
+        <div class="panel" id="{{repo.id}}">
+          <div class="panel-heading">
+            <a href="{{repo.html_url}}">
+              <h3 class="panel-title">{{repo.name}}</h3>
+            </a>
+          </div>
+          <div class="panel-body">
+            <div class="stats">
+              <span class="icon">
+                <i class="fa fa-eye fa-2x"></i>
+              </span>
+              <span class="counts">{{repo.watchers_count}}</span>
+            </div>
+            <div class="stats">
+              <span class="icon">
+                <i class="fa fa-star fa-2x"></i>
+              </span>
+              <span class="counts">{{repo.stargazers_count}}</span>
+            </div>
+            <div class="stats">
+              <span class="icon">
+                <i class="fa fa-code-fork fa-2x"></i>
+              </span>
+              <span class="counts">{{repo.forks}}</span>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+  <script>
+    Polymer('x-github-repos', {
+      /**
+       * Number of repository to be fetched
+       * @attributes repoPerpage
+       * @type {Number}
+       * @default 100
+       */
+      repoPerPage: 100,
+      /**
+       * current page
+       * @attributes page
+       * @type {Number}
+       * @default 1
+       */
+      page: 1,
+      /**
+       * Array of repos
+       * @attributes photos
+       * @type {Array}
+       * @default []
+       */
+      repos: [],
+      ready: function () {
+        this.$.repos.model = this.repos;
+        this.$.ajax.addEventListener('polymer-response', function (e) {
+          var data = e.detail.response.data;
+          data.sort(function(a,b){
+            if(a.stargazers_count > b.stargazers_count){
+              return -1;
+            }
+            if(a.stargazers_count < b.stargazers_count){
+              return 1;
+            }
+            return 0;
+          });
+          this.repos = {repos: data};
+          this.$.repos.model = {repos: data};
+          this.fire('x-github-repos-load', {response: data});
+        }.bind(this));
+      }
+    });
+  </script>
+
+</polymer-element>

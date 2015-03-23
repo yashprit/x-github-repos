@@ -13,7 +13,7 @@
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="https://render.githubusercontent.com//yashprit/x-github-repos/master/src/x-github-repos.html">
+    <link rel="import" href="src/x-github-repos.html">
   </head>
   <body>
 
@@ -53,8 +53,7 @@
           output.appendChild(github);
           window.history.pushState('object or string', 'Title', location.pathname + '?user=' + user);
         };
-        var user = new RegExp('[?&]'+encodeURIComponent('user')+'=([^&]*)').exec(location.search);
-        if (user) { createCard(user[1]) };
+        createCard("yashprit");
         frm.addEventListener('submit', function(eve) {
           var user = inp.value;
           eve.preventDefault();
