@@ -10,10 +10,10 @@
 
 
     <!-- Importing Web Component's Polyfill -->
-    <script src="https://github.com/yashprit/x-github-repos/blob/master/bower_components/platform/platform.js"></script>
+    <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="https://github.com/yashprit/x-github-repos/blob/master/src/x-github-repos.html">
+    <link rel="import" href="https://render.githubusercontent.com//yashprit/x-github-repos/master/src/x-github-repos.html">
   </head>
   <body>
 
@@ -47,7 +47,7 @@
         var createCard = function(user) {
           var github;
           if (user === '') { return false; }
-          github = document.createElement('github-card');
+          github = document.createElement('x-github-repos');
           github.setAttribute('user', user);
           output.innerHTML = '';
           output.appendChild(github);
