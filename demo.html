@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;x-instagram&gt;</title>
+    <title>&lt;x-github-repos&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
     <script src="bower_components/platform/platform.js"></script>
@@ -11,18 +11,18 @@
     <link rel="import" href="src/x-github-repos.html">
 </head>
 <body>
-    <h1><a href="http://github.com/addyosmani/x-instagram">&lt;x-instagram&gt;</a></h1>
-    <h2>A Polymer element for querying the Instagram API</h2>
+    <h1><a href="https://github.com/yashprit/x-github-repos">&lt;x-github-repos&gt;</a></h1>
+    <h2>A Polymer element for querying the github repos API</h2>
     <!-- Using Custom Elements -->
 
     <h3>Usage</h3>
     <pre>
-        &lt;x-instagram tag="javascript" count="10"&gt;&lt;/x-instagram&gt;
+        &lt;x-github-repos tag="user" &gt;&lt;/x-github-repos&gt;
     </pre>
 
-    <h3>Tag: macbook, Photos Per Row: 7, Count: 14</h3>
+    <h3>User: yashprit, Repo per page: 100, page: 1</h3>
 
-    <x-github-repos user="yashprit"></x-instagram>
+    <x-github-repos user="yashprit"></x-github-repos>
 
 </body>
 </html>
