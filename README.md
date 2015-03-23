@@ -24,10 +24,10 @@ $ bower install --save x-github-repos
 
 ## Demo
 
-[Follow url for demo]()
+[Follow url for demo](http://yashprit.github.io/x-github-repos)
 
 ## Contribute or Report Issue
-For bugs and feature requests, [please create an issue][issue-url].
+For bugs and feature requests, [please create an issue](https://github.com/yashprit/x-github-repos/issues).
 
 
 ## License
