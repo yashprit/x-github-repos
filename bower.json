@@ -6,10 +6,7 @@
   ],
   "main": "src/x-github-repos.html",
   "keywords": [
-    "web-component",
-    "web-components",
-    "polymer",
-    "github"
+    "web-components"
   ],
   "license": "MIT",
   "ignore": [
