@@ -18,7 +18,7 @@ $ bower install --save x-github-repos
 <link rel="import" href="src/x-github-repos.html">
 
 <!--call element-->
-<x-github-repos tag="user"></x-github-repos>
+<x-github-repos user="yashprit"></x-github-repos>
 
 ```
 
