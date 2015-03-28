@@ -27,7 +27,7 @@
   "_resolution": {
     "type": "version",
     "tag": "0.0.2",
-    "commit": "7ad303f99eb59b344c85c1bd761bfd9e6a8652c3"
+    "commit": "f32d85f98da88b4b822c82d06a2d1ee353208fc0"
   },
   "_source": "git://github.com/yashprit/x-github-repos.git",
   "_target": "0.0.2",

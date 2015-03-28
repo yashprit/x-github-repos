@@ -52,17 +52,9 @@
         }
       }
 
-      .xGithubRepo{
-        width:960px;
-        margin:0 auto;
-        font-family: 'Droid Sans', sans-serif;;
-        overflow: hidden;
-      }
-
       .panel {
         border-radius: 2px;
         border: 0;
-        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
         width:300px;
         min-height:200px;
         float:left;
@@ -99,9 +91,8 @@
       .stats{
         width:60px;
         float:left;
-        margin-left: 30px;
+        margin-left: 35px;
         text-align:center;
-        border: 2px solid #03a9f4;
         border-radius: 50%;;
         height:60px;
         padding: 5px;
@@ -128,6 +119,105 @@
         padding:5px;
         margin-top:10px;
       }
+      /* Smartphones (portrait and landscape) ----------- */
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+          .xGithubRepo{
+            width:300px;
+            margin:0 auto;
+            font-family: 'Droid Sans', sans-serif;;
+            overflow: hidden;
+          }
+      }
+
+      /* Smartphones (landscape) ----------- */
+      @media only screen and (min-width : 321px) {
+        .xGithubRepo{
+          width:300px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      /* Smartphones (portrait) ----------- */
+      @media only screen and (max-width : 320px) {
+        .xGithubRepo{
+          width:300px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      /* iPads (portrait and landscape) ----------- */
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        .xGithubRepo{
+          width:700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      /* iPads (landscape) ----------- */
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        .xGithubRepo{
+          width:700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      /* iPads (portrait) ----------- */
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        .xGithubRepo{
+          width:700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+      /**********
+      iPad 3
+      **********/
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+        .xGithubRepo{
+          width:700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+        .xGithubRepo{
+          width:700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+      /* Desktops and laptops ----------- */
+      @media only screen  and (min-width : 1224px) {
+        .xGithubRepo{
+          width:980px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
+      /* Large screens ----------- */
+      @media only screen  and (min-width : 1824px) {
+        .xGithubRepo{
+          width:1700px;
+          margin:0 auto;
+          font-family: 'Droid Sans', sans-serif;;
+          overflow: hidden;
+        }
+      }
+
     </style>
     <polymer-jsonp id="ajax" auto url="https://api.github.com/users/{{user}}/repos?&per_page={{repoPerPage}}&page={{page}}&callback="></polymer-jsonp>
 
@@ -141,22 +231,22 @@
           </div>
           <div class="panel-body">
             <div class="stats">
+              <span class="counts">{{repo.watchers_count}}</span>
               <span class="icon">
                 <i class="fa fa-eye fa-2x"></i>
               </span>
-              <span class="counts">{{repo.watchers_count}}</span>
             </div>
             <div class="stats">
+              <span class="counts">{{repo.stargazers_count}}</span>
               <span class="icon">
                 <i class="fa fa-star fa-2x"></i>
               </span>
-              <span class="counts">{{repo.stargazers_count}}</span>
             </div>
             <div class="stats">
+              <span class="counts">{{repo.forks}}</span>
               <span class="icon">
                 <i class="fa fa-code-fork fa-2x"></i>
               </span>
-              <span class="counts">{{repo.forks}}</span>
             </div>
           </div>
         </div>
