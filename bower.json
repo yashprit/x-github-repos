@@ -18,8 +18,6 @@
   ],
   "dependencies": {
     "platform": "Polymer/platform#>=0.3.0",
-    "polymer": "Polymer/polymer#>=0.3.0",
-    "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0",
-    "components-font-awesome": "~4.3.0"
+    "x-github-repos": "*"
   }
 }
