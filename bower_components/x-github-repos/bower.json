@@ -1,0 +1,25 @@
+{
+  "name": "x-github-repos",
+  "version": "0.0.1",
+  "authors": [
+    "Yashprit Singh <yashprits@gmail.com>"
+  ],
+  "main": "src/x-github-repos.html",
+  "keywords": [
+    "web-components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#>=0.3.0",
+    "polymer": "Polymer/polymer#>=0.3.0",
+    "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0",
+    "components-font-awesome": "~4.3.0"
+  }
+}

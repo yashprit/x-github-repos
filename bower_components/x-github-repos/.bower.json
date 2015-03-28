@@ -1,0 +1,34 @@
+{
+  "name": "x-github-repos",
+  "authors": [
+    "Yashprit Singh <yashprits@gmail.com>"
+  ],
+  "main": "src/x-github-repos.html",
+  "keywords": [
+    "web-components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#>=0.3.0",
+    "polymer": "Polymer/polymer#>=0.3.0",
+    "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0",
+    "components-font-awesome": "~4.3.0"
+  },
+  "homepage": "https://github.com/yashprit/x-github-repos",
+  "_release": "6f9a8c3bba",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6f9a8c3bbad69f4f0379046aa332282638a2f4b0"
+  },
+  "_source": "git://github.com/yashprit/x-github-repos.git",
+  "_target": "*",
+  "_originalSource": "x-github-repos"
+}

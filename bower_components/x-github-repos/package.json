@@ -1,0 +1,25 @@
+{
+  "name": "x-github-repos",
+  "version": "0.0.0-alpha",
+  "description": "This is awesome application",
+  "bugs": {
+    "url": "yashprit/x-github-repos/issues"
+  },
+  "author": {
+    "url": "yashprit.github.io",
+    "name": "Yashprit",
+    "email": "yashprit@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yashprit/x-github-repos"
+  },
+  "license": "MIT",
+  "keywords": [
+    "web-components",
+    "x-github-repos",
+    "web-component",
+    "polymer",
+    "github"
+  ]
+}
