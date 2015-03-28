@@ -1,10 +1,10 @@
 {
   "name": "x-github-repos",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Yashprit Singh <yashprits@gmail.com>"
   ],
-  "main": "src/x-github-repos.html",
+  "main": "x-github-repos.html",
   "keywords": [
     "web-components"
   ],
