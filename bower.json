@@ -18,6 +18,6 @@
   ],
   "dependencies": {
     "platform": "Polymer/platform#>=0.3.0",
-    "x-github-repos": "*"
+    "x-github-repos": "0.0.2"
   }
 }

@@ -1,9 +1,10 @@
 {
   "name": "x-github-repos",
+  "version": "0.0.2",
   "authors": [
     "Yashprit Singh <yashprits@gmail.com>"
   ],
-  "main": "src/x-github-repos.html",
+  "main": "x-github-repos.html",
   "keywords": [
     "web-components"
   ],
@@ -22,13 +23,13 @@
     "components-font-awesome": "~4.3.0"
   },
   "homepage": "https://github.com/yashprit/x-github-repos",
-  "_release": "6f9a8c3bba",
+  "_release": "0.0.2",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "6f9a8c3bbad69f4f0379046aa332282638a2f4b0"
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "7ad303f99eb59b344c85c1bd761bfd9e6a8652c3"
   },
   "_source": "git://github.com/yashprit/x-github-repos.git",
-  "_target": "*",
+  "_target": "0.0.2",
   "_originalSource": "x-github-repos"
 }
